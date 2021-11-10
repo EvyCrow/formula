@@ -37,22 +37,12 @@ int main()
 			}
 
 			n = floor(n);
+			double fact = 1;
 
 			for (int i = 1; i <= n; i++)
 			{
-				double fact = 1;
-				if (n > 10)
-				{
-					itg = -1;
-					break;
-				}
-				else 
-				{
-					for (int j = 1; j <= i; j++)
-						fact = fact * j;
-
-					itg = itg + ((pow(-1, i) * (i + 1)) / fact);
-				}
+				fact /= fact * i;
+				itg = itg + ((pow(-1, i) * (i + 1)) * fact);
 			}
 			cout << "Итог >" << itg << endl;
 			continue;
